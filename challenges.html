@@ -3337,6 +3337,98 @@
         }
         </script>
     <script>document.querySelector(`.category[id="cat-osint"]`).style.display = "block";</script>
+
+        <div class="challenge" id="duty_calls" style="--accent-color: hsl(164, 80%, 60%)">
+            <div class="challenge-header" onclick="toggleChallengeDetails('duty_calls')">
+                <h3>Duty Calls</h3>
+                <div class="challenge-meta">
+                    <div class="meta-item"><i>⚡</i> <span class="difficulty-easy">Easy</span></div>
+                </div>
+                <i class="toggle-icon">▼</i>
+            </div>
+            
+            <div class="challenge-details" id="details-duty_calls">
+                <div class="challenge-description">
+                    <p><strong>Description:</strong> He was imprisoned in a Soviet labor camp after the Battle of Stalingrad.<br>Decades later, his name appeared in CIA documents tied to psychological conditioning experiments.<br>Some say he helped an American operative escape.<br>But there’s no record of him ever leaving Vorkuta alive.<br>Stranger still — years later, he was seen on the battlefield……but only by one man.<br><br>What was his name?</p>
+                    
+                    <div class="meta-item"><i>🔑</i> <span class="tooltip">Flag Format<span class="tooltiptext">The flag must match this pattern exactly</span></span>: <code>flag{}</code></div>
+                </div>
+                
+                <div class="flag-form">
+                    <input type="text" class="flag-input" id="input-duty_calls" placeholder="Enter your flag here..." autocomplete="off">
+                    <button class="flag-submit" onclick="checkFlag_duty_calls()">
+                        <i>🔒</i> Submit Flag
+                    </button>
+                    <div class="result" id="result-duty_calls"></div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+        async function checkFlag_duty_calls() {
+            const input = document.getElementById("input-duty_calls").value.trim();
+            const resultElement = document.getElementById("result-duty_calls");
+            const challengeCard = document.getElementById("duty_calls");
+            
+            // Clear previous result and show loading state
+            resultElement.className = "result loading show";
+            resultElement.textContent = "🔐 Verifying your flag...";
+            
+            // Simulate network delay for realism
+            await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 700));
+            
+            try {
+                // Client-side SHA-256 hashing
+                const msgBuffer = new TextEncoder().encode(input);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+                if (hashHex === "117bd6a254140cc89cf3af3a6ec021a49b6848c2066958be4e8fc851c03f9354") {
+                    // Correct flag
+                    resultElement.className = "result success show";
+                    resultElement.textContent = "✅ Correct! Flag accepted!";
+                    
+                    // Celebration effects
+                    challengeCard.style.border = "1px solid var(--success)";
+                    challengeCard.style.boxShadow = "0 0 20px rgba(0, 204, 102, 0.5)";
+                    challengeCard.style.animation = "pulse 1.5s infinite";
+                    
+                    // Create confetti explosion
+                    createConfetti();
+                    
+                    // Add success badge to challenge
+                    const successBadge = document.createElement('div');
+                    successBadge.innerHTML = '<div style="position: absolute; top: 10px; right: 10px; background: var(--success); color: black; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: bold;">SOLVED</div>';
+                    challengeCard.appendChild(successBadge);
+                    
+                    // Disable input after success
+                    document.getElementById("input-duty_calls").disabled = true;
+                    document.querySelector(`button[onclick="checkFlag_duty_calls()"]`).disabled = true;
+                    
+                    // Stop pulse animation after 3 seconds
+                    setTimeout(() => {
+                        challengeCard.style.animation = "";
+                    }, 3000);
+                } else {
+                    // Incorrect flag
+                    resultElement.className = "result error show";
+                    resultElement.textContent = "❌ Incorrect flag! Try again.";
+                    
+                    // Shake animation
+                    challengeCard.style.animation = "shake 0.5s";
+                    setTimeout(() => {
+                        challengeCard.style.animation = "";
+                    }, 500);
+                }
+            } catch (error) {
+                resultElement.className = "result error show";
+                resultElement.textContent = "⚠️ Error verifying flag. Please try again.";
+                console.error("Flag verification error:", error);
+            }
+        }
+        </script>
+    <script>document.querySelector(`.category[id="cat-osint"]`).style.display = "block";</script>
                     <!-- osint-challenges-here -->
                 </div>
             </section>
