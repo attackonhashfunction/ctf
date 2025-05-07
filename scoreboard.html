@@ -265,22 +265,22 @@
     <tr>
       <td>🥇 1</td>
       <td>DargoTamber</td>
-      <td>9650</td>
+      <td>8450</td>
     </tr>
     <tr>
       <td>🥈 2</td>
       <td>suyashx_x</td>
-      <td>5250</td>
+      <td>5600</td>
     </tr>
     <tr>
       <td>🥉 3</td>
       <td>sk1ll_1ssu3</td>
-      <td>3600</td>
+      <td>3250</td>
     </tr>
     <tr>
       <td>4</td>
       <td>Shrenav</td>
-      <td>2900</td>
+      <td>2850</td>
     </tr>
     <tr>
       <td>5</td>
@@ -288,34 +288,34 @@
       <td>1650</td>
     </tr>
     <tr>
-      <td>6</td>
+      <td>5</td>
+      <td>YoursTruly</td>
+      <td>1650</td>
+    </tr>
+    <tr>
+      <td>7</td>
       <td>༒𝙰sʜᴡɪɴ༒</td>
       <td>1550</td>
     </tr>
     <tr>
-      <td>7</td>
-      <td>MrBender</td>
-      <td>1300</td>
-    </tr>
-    <tr>
       <td>8</td>
-      <td>YoursTruly</td>
-      <td>1250</td>
+      <td>MrBender</td>
+      <td>1450</td>
     </tr>
     <tr>
       <td>9</td>
-      <td>Aad Esh</td>
+      <td>Nikesh</td>
       <td>1050</td>
     </tr>
     <tr>
       <td>10</td>
-      <td>MoonLight</td>
-      <td>800</td>
+      <td>Aad Esh</td>
+      <td>1000</td>
     </tr>
     <tr>
       <td>11</td>
-      <td>Nikesh</td>
-      <td>700</td>
+      <td>MoonLight</td>
+      <td>800</td>
     </tr>
     <tr>
       <td>12</td>
@@ -330,16 +330,16 @@
     <tr>
       <td>14</td>
       <td>kinachaiyo</td>
-      <td>200</td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>ahlai:3</td>
       <td>150</td>
     </tr>
     <tr>
-      <td>15</td>
+      <td>14</td>
       <td>Yodha</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>ahlai:3</td>
       <td>150</td>
     </tr>
   </tbody>
@@ -366,10 +366,10 @@
         const pointsChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['DargoTamber', 'suyashx_x', 'sk1ll_1ssu3', 'Shrenav', 'Oju D. Amatya', '༒𝙰sʜᴡɪɴ༒', 'MrBender', 'YoursTruly', 'Aad Esh', 'MoonLight'],
+                labels: ['DargoTamber', 'suyashx_x', 'sk1ll_1ssu3', 'Shrenav', 'Oju D. Amatya', 'YoursTruly', '༒𝙰sʜᴡɪɴ༒', 'MrBender', 'Nikesh', 'Aad Esh'],
                 datasets: [{
                     label: 'Points',
-                    data: [9650, 5250, 3600, 2900, 1650, 1550, 1300, 1250, 1050, 800],
+                    data: [8450, 5600, 3250, 2850, 1650, 1650, 1550, 1450, 1050, 1000],
                     backgroundColor: gradient,
                     borderColor: 'rgba(255, 255, 255, 0.3)',
                     borderWidth: 1,
@@ -428,8 +428,8 @@
                 scales: {
                     y: {
                         beginAtZero: false,
-                        min: getRoundedMin([9650, 5250, 3600, 2900, 1650, 1550, 1300, 1250, 1050, 800]),
-                        max: getRoundedMax([9650, 5250, 3600, 2900, 1650, 1550, 1300, 1250, 1050, 800]),
+                        min: getRoundedMin([8450, 5600, 3250, 2850, 1650, 1650, 1550, 1450, 1050, 1000]),
+                        max: getRoundedMax([8450, 5600, 3250, 2850, 1650, 1650, 1550, 1450, 1050, 1000]),
                         ticks: {
                             color: 'rgba(255, 255, 255, 0.7)',
                             font: {
@@ -437,7 +437,7 @@
                                 size: 12
                             },
                             padding: 10,
-                            stepSize: getStepSize([9650, 5250, 3600, 2900, 1650, 1550, 1300, 1250, 1050, 800]),
+                            stepSize: getStepSize([8450, 5600, 3250, 2850, 1650, 1650, 1550, 1450, 1050, 1000]),
                             callback: function(value) {
                                 return value.toLocaleString();
                             }
