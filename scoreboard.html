@@ -265,22 +265,22 @@
     <tr>
       <td>🥇 1</td>
       <td>DargoTamber</td>
-      <td>7900</td>
+      <td>9850</td>
     </tr>
     <tr>
       <td>🥈 2</td>
       <td>suyashx_x</td>
-      <td>5150</td>
+      <td>6200</td>
     </tr>
     <tr>
       <td>🥉 3</td>
       <td>sk1ll_1ssu3</td>
-      <td>3250</td>
+      <td>3500</td>
     </tr>
     <tr>
       <td>4</td>
       <td>Shrenav</td>
-      <td>2850</td>
+      <td>3100</td>
     </tr>
     <tr>
       <td>5</td>
@@ -299,18 +299,18 @@
     </tr>
     <tr>
       <td>8</td>
-      <td>Nikesh</td>
-      <td>1450</td>
+      <td>MrBender</td>
+      <td>1400</td>
     </tr>
     <tr>
-      <td>8</td>
-      <td>MrBender</td>
-      <td>1450</td>
+      <td>9</td>
+      <td>Nikesh</td>
+      <td>1300</td>
     </tr>
     <tr>
       <td>10</td>
       <td>Aad Esh</td>
-      <td>1000</td>
+      <td>950</td>
     </tr>
     <tr>
       <td>11</td>
@@ -329,11 +329,6 @@
     </tr>
     <tr>
       <td>14</td>
-      <td>kinachaiyo</td>
-      <td>150</td>
-    </tr>
-    <tr>
-      <td>14</td>
       <td>Yodha</td>
       <td>150</td>
     </tr>
@@ -341,6 +336,11 @@
       <td>14</td>
       <td>ahlai:3</td>
       <td>150</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>kinachaiyo</td>
+      <td>100</td>
     </tr>
   </tbody>
 </table>
@@ -366,10 +366,10 @@
         const pointsChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['DargoTamber', 'suyashx_x', 'sk1ll_1ssu3', 'Shrenav', 'YoursTruly', 'Oju D. Amatya', '༒𝙰sʜᴡɪɴ༒', 'Nikesh', 'MrBender', 'Aad Esh'],
+                labels: ['DargoTamber', 'suyashx_x', 'sk1ll_1ssu3', 'Shrenav', 'YoursTruly', 'Oju D. Amatya', '༒𝙰sʜᴡɪɴ༒', 'MrBender', 'Nikesh', 'Aad Esh'],
                 datasets: [{
                     label: 'Points',
-                    data: [7900, 5150, 3250, 2850, 2050, 1650, 1550, 1450, 1450, 1000],
+                    data: [9850, 6200, 3500, 3100, 2050, 1650, 1550, 1400, 1300, 950],
                     backgroundColor: gradient,
                     borderColor: 'rgba(255, 255, 255, 0.3)',
                     borderWidth: 1,
@@ -428,8 +428,8 @@
                 scales: {
                     y: {
                         beginAtZero: false,
-                        min: getRoundedMin([7900, 5150, 3250, 2850, 2050, 1650, 1550, 1450, 1450, 1000]),
-                        max: getRoundedMax([7900, 5150, 3250, 2850, 2050, 1650, 1550, 1450, 1450, 1000]),
+                        min: getRoundedMin([9850, 6200, 3500, 3100, 2050, 1650, 1550, 1400, 1300, 950]),
+                        max: getRoundedMax([9850, 6200, 3500, 3100, 2050, 1650, 1550, 1400, 1300, 950]),
                         ticks: {
                             color: 'rgba(255, 255, 255, 0.7)',
                             font: {
@@ -437,7 +437,7 @@
                                 size: 12
                             },
                             padding: 10,
-                            stepSize: getStepSize([7900, 5150, 3250, 2850, 2050, 1650, 1550, 1450, 1450, 1000]),
+                            stepSize: getStepSize([9850, 6200, 3500, 3100, 2050, 1650, 1550, 1400, 1300, 950]),
                             callback: function(value) {
                                 return value.toLocaleString();
                             }
