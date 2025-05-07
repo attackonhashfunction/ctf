@@ -265,12 +265,12 @@
     <tr>
       <td>🥇 1</td>
       <td>DargoTamber</td>
-      <td>9850</td>
+      <td>10650</td>
     </tr>
     <tr>
       <td>🥈 2</td>
       <td>suyashx_x</td>
-      <td>6200</td>
+      <td>6150</td>
     </tr>
     <tr>
       <td>🥉 3</td>
@@ -284,18 +284,18 @@
     </tr>
     <tr>
       <td>5</td>
-      <td>YoursTruly</td>
-      <td>2050</td>
+      <td>༒𝙰sʜᴡɪɴ༒</td>
+      <td>2000</td>
     </tr>
     <tr>
-      <td>6</td>
-      <td>Oju D. Amatya</td>
-      <td>1650</td>
+      <td>5</td>
+      <td>YoursTruly</td>
+      <td>2000</td>
     </tr>
     <tr>
       <td>7</td>
-      <td>༒𝙰sʜᴡɪɴ༒</td>
-      <td>1550</td>
+      <td>Oju D. Amatya</td>
+      <td>1650</td>
     </tr>
     <tr>
       <td>8</td>
@@ -305,7 +305,7 @@
     <tr>
       <td>9</td>
       <td>Nikesh</td>
-      <td>1300</td>
+      <td>1250</td>
     </tr>
     <tr>
       <td>10</td>
@@ -366,10 +366,10 @@
         const pointsChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['DargoTamber', 'suyashx_x', 'sk1ll_1ssu3', 'Shrenav', 'YoursTruly', 'Oju D. Amatya', '༒𝙰sʜᴡɪɴ༒', 'MrBender', 'Nikesh', 'Aad Esh'],
+                labels: ['DargoTamber', 'suyashx_x', 'sk1ll_1ssu3', 'Shrenav', '༒𝙰sʜᴡɪɴ༒', 'YoursTruly', 'Oju D. Amatya', 'MrBender', 'Nikesh', 'Aad Esh'],
                 datasets: [{
                     label: 'Points',
-                    data: [9850, 6200, 3500, 3100, 2050, 1650, 1550, 1400, 1300, 950],
+                    data: [10650, 6150, 3500, 3100, 2000, 2000, 1650, 1400, 1250, 950],
                     backgroundColor: gradient,
                     borderColor: 'rgba(255, 255, 255, 0.3)',
                     borderWidth: 1,
@@ -428,8 +428,8 @@
                 scales: {
                     y: {
                         beginAtZero: false,
-                        min: getRoundedMin([9850, 6200, 3500, 3100, 2050, 1650, 1550, 1400, 1300, 950]),
-                        max: getRoundedMax([9850, 6200, 3500, 3100, 2050, 1650, 1550, 1400, 1300, 950]),
+                        min: getRoundedMin([10650, 6150, 3500, 3100, 2000, 2000, 1650, 1400, 1250, 950]),
+                        max: getRoundedMax([10650, 6150, 3500, 3100, 2000, 2000, 1650, 1400, 1250, 950]),
                         ticks: {
                             color: 'rgba(255, 255, 255, 0.7)',
                             font: {
@@ -437,7 +437,7 @@
                                 size: 12
                             },
                             padding: 10,
-                            stepSize: getStepSize([9850, 6200, 3500, 3100, 2050, 1650, 1550, 1400, 1300, 950]),
+                            stepSize: getStepSize([10650, 6150, 3500, 3100, 2000, 2000, 1650, 1400, 1250, 950]),
                             callback: function(value) {
                                 return value.toLocaleString();
                             }
