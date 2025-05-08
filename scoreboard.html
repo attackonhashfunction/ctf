@@ -265,27 +265,27 @@
     <tr>
       <td>🥇 1</td>
       <td>DargoTamber</td>
-      <td>11000</td>
+      <td>10850</td>
     </tr>
     <tr>
       <td>🥈 2</td>
       <td>suyashx_x</td>
-      <td>6650</td>
+      <td>6550</td>
     </tr>
     <tr>
       <td>🥉 3</td>
       <td>sk1ll_1ssu3</td>
-      <td>3450</td>
+      <td>3800</td>
     </tr>
     <tr>
-      <td>🥉 3</td>
+      <td>4</td>
       <td>Shrenav</td>
       <td>3450</td>
     </tr>
     <tr>
       <td>5</td>
       <td>MrBender</td>
-      <td>2750</td>
+      <td>3250</td>
     </tr>
     <tr>
       <td>6</td>
@@ -309,23 +309,23 @@
     </tr>
     <tr>
       <td>10</td>
-      <td>Aad Esh</td>
-      <td>900</td>
-    </tr>
-    <tr>
-      <td>10</td>
       <td>MoonLight</td>
       <td>900</td>
     </tr>
     <tr>
-      <td>12</td>
-      <td>404Ninjaaa</td>
-      <td>600</td>
+      <td>11</td>
+      <td>Aad Esh</td>
+      <td>800</td>
     </tr>
     <tr>
       <td>12</td>
+      <td>404Ninjaaa</td>
+      <td>550</td>
+    </tr>
+    <tr>
+      <td>13</td>
       <td>krazy</td>
-      <td>600</td>
+      <td>500</td>
     </tr>
     <tr>
       <td>14</td>
@@ -366,10 +366,10 @@
         const pointsChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['DargoTamber', 'suyashx_x', 'sk1ll_1ssu3', 'Shrenav', 'MrBender', 'YoursTruly', '༒𝙰sʜᴡɪɴ༒', 'Oju D. Amatya', 'Nikesh', 'Aad Esh'],
+                labels: ['DargoTamber', 'suyashx_x', 'sk1ll_1ssu3', 'Shrenav', 'MrBender', 'YoursTruly', '༒𝙰sʜᴡɪɴ༒', 'Oju D. Amatya', 'Nikesh', 'MoonLight'],
                 datasets: [{
                     label: 'Points',
-                    data: [11000, 6650, 3450, 3450, 2750, 2050, 1850, 1800, 1000, 900],
+                    data: [10850, 6550, 3800, 3450, 3250, 2050, 1850, 1800, 1000, 900],
                     backgroundColor: gradient,
                     borderColor: 'rgba(255, 255, 255, 0.3)',
                     borderWidth: 1,
@@ -428,8 +428,8 @@
                 scales: {
                     y: {
                         beginAtZero: false,
-                        min: getRoundedMin([11000, 6650, 3450, 3450, 2750, 2050, 1850, 1800, 1000, 900]),
-                        max: getRoundedMax([11000, 6650, 3450, 3450, 2750, 2050, 1850, 1800, 1000, 900]),
+                        min: getRoundedMin([10850, 6550, 3800, 3450, 3250, 2050, 1850, 1800, 1000, 900]),
+                        max: getRoundedMax([10850, 6550, 3800, 3450, 3250, 2050, 1850, 1800, 1000, 900]),
                         ticks: {
                             color: 'rgba(255, 255, 255, 0.7)',
                             font: {
@@ -437,7 +437,7 @@
                                 size: 12
                             },
                             padding: 10,
-                            stepSize: getStepSize([11000, 6650, 3450, 3450, 2750, 2050, 1850, 1800, 1000, 900]),
+                            stepSize: getStepSize([10850, 6550, 3800, 3450, 3250, 2050, 1850, 1800, 1000, 900]),
                             callback: function(value) {
                                 return value.toLocaleString();
                             }
