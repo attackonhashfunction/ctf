@@ -1456,6 +1456,98 @@
         }
         </script>
     <script>document.querySelector(`.category[id="cat-misc"]`).style.display = "block";</script>
+
+        <div class="challenge" id="plain_sight" style="--accent-color: hsl(186, 80%, 60%)">
+            <div class="challenge-header" onclick="toggleChallengeDetails('plain_sight')">
+                <h3>Plain Sight</h3>
+                <div class="challenge-meta">
+                    <div class="meta-item"><i>⚡</i> <span class="difficulty-easy">Easy</span></div>
+                </div>
+                <i class="toggle-icon">▼</i>
+            </div>
+            
+            <div class="challenge-details" id="details-plain_sight">
+                <div class="challenge-description">
+                    <p><strong>Description:</strong> Can You escalate the privillege and get the flag. Flag is in home directory of user hacker.</p>
+                    <p><strong>Attachment:</strong> <a href="https://drive.google.com/file/d/1DxThfX49k5BWYbZTN5aU85R98V8P8Tfe/view?usp=sharing" target="_blank">Download</a></p>
+                    <div class="meta-item"><i>🔑</i> <span class="tooltip">Flag Format<span class="tooltiptext">The flag must match this pattern exactly</span></span>: <code>AOHF{}</code></div>
+                </div>
+                
+                <div class="flag-form">
+                    <input type="text" class="flag-input" id="input-plain_sight" placeholder="Enter your flag here..." autocomplete="off">
+                    <button class="flag-submit" onclick="checkFlag_plain_sight()">
+                        <i>🔒</i> Submit Flag
+                    </button>
+                    <div class="result" id="result-plain_sight"></div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+        async function checkFlag_plain_sight() {
+            const input = document.getElementById("input-plain_sight").value.trim();
+            const resultElement = document.getElementById("result-plain_sight");
+            const challengeCard = document.getElementById("plain_sight");
+            
+            // Clear previous result and show loading state
+            resultElement.className = "result loading show";
+            resultElement.textContent = "🔐 Verifying your flag...";
+            
+            // Simulate network delay for realism
+            await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 700));
+            
+            try {
+                // Client-side SHA-256 hashing
+                const msgBuffer = new TextEncoder().encode(input);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+                if (hashHex === "131d60fb7713377e14f6505575699ae1172a9ca109680ef5f538bf390fae6d71") {
+                    // Correct flag
+                    resultElement.className = "result success show";
+                    resultElement.textContent = "✅ Correct! Flag accepted!";
+                    
+                    // Celebration effects
+                    challengeCard.style.border = "1px solid var(--success)";
+                    challengeCard.style.boxShadow = "0 0 20px rgba(0, 204, 102, 0.5)";
+                    challengeCard.style.animation = "pulse 1.5s infinite";
+                    
+                    // Create confetti explosion
+                    createConfetti();
+                    
+                    // Add success badge to challenge
+                    const successBadge = document.createElement('div');
+                    successBadge.innerHTML = '<div style="position: absolute; top: 10px; right: 10px; background: var(--success); color: black; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: bold;">SOLVED</div>';
+                    challengeCard.appendChild(successBadge);
+                    
+                    // Disable input after success
+                    document.getElementById("input-plain_sight").disabled = true;
+                    document.querySelector(`button[onclick="checkFlag_plain_sight()"]`).disabled = true;
+                    
+                    // Stop pulse animation after 3 seconds
+                    setTimeout(() => {
+                        challengeCard.style.animation = "";
+                    }, 3000);
+                } else {
+                    // Incorrect flag
+                    resultElement.className = "result error show";
+                    resultElement.textContent = "❌ Incorrect flag! Try again.";
+                    
+                    // Shake animation
+                    challengeCard.style.animation = "shake 0.5s";
+                    setTimeout(() => {
+                        challengeCard.style.animation = "";
+                    }, 500);
+                }
+            } catch (error) {
+                resultElement.className = "result error show";
+                resultElement.textContent = "⚠️ Error verifying flag. Please try again.";
+                console.error("Flag verification error:", error);
+            }
+        }
+        </script>
+    <script>document.querySelector(`.category[id="cat-misc"]`).style.display = "block";</script>
                     <!-- misc-challenges-here -->
                 </div>
             </section>
