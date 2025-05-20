@@ -1468,7 +1468,7 @@
             
             <div class="challenge-details" id="details-plain_sight">
                 <div class="challenge-description">
-                    <p><strong>Description:</strong> Can You escalate the privillege and get the flag. Flag is in home directory of user hacker.</p>
+                    <p><strong>Description:</strong> Can You escalate the privillege and get the flag. Flag is in home directory of user hacker. <br><b>Note: Reversing Docker and Docker Desktop is strictly prohibited</b></p>
                     <p><strong>Attachment:</strong> <a href="https://drive.google.com/file/d/1DxThfX49k5BWYbZTN5aU85R98V8P8Tfe/view?usp=sharing" target="_blank">Download</a></p>
                     <div class="meta-item"><i>🔑</i> <span class="tooltip">Flag Format<span class="tooltiptext">The flag must match this pattern exactly</span></span>: <code>AOHF{}</code></div>
                 </div>
@@ -1524,6 +1524,98 @@
                     // Disable input after success
                     document.getElementById("input-plain_sight").disabled = true;
                     document.querySelector(`button[onclick="checkFlag_plain_sight()"]`).disabled = true;
+                    
+                    // Stop pulse animation after 3 seconds
+                    setTimeout(() => {
+                        challengeCard.style.animation = "";
+                    }, 3000);
+                } else {
+                    // Incorrect flag
+                    resultElement.className = "result error show";
+                    resultElement.textContent = "❌ Incorrect flag! Try again.";
+                    
+                    // Shake animation
+                    challengeCard.style.animation = "shake 0.5s";
+                    setTimeout(() => {
+                        challengeCard.style.animation = "";
+                    }, 500);
+                }
+            } catch (error) {
+                resultElement.className = "result error show";
+                resultElement.textContent = "⚠️ Error verifying flag. Please try again.";
+                console.error("Flag verification error:", error);
+            }
+        }
+        </script>
+    <script>document.querySelector(`.category[id="cat-misc"]`).style.display = "block";</script>
+
+        <div class="challenge" id="privilege_escalation_1" style="--accent-color: hsl(169, 80%, 60%)">
+            <div class="challenge-header" onclick="toggleChallengeDetails('privilege_escalation_1')">
+                <h3>Privilege Escalation 1</h3>
+                <div class="challenge-meta">
+                    <div class="meta-item"><i>⚡</i> <span class="difficulty-easy">Easy</span></div>
+                </div>
+                <i class="toggle-icon">▼</i>
+            </div>
+            
+            <div class="challenge-details" id="details-privilege_escalation_1">
+                <div class="challenge-description">
+                    <p><strong>Description:</strong> Can you escalate the privilege and read the file /root/flag.txt ? <br><b>Note: Reversing Docker and Docker Desktop is strictly prohibited.</b></p>
+                    <p><strong>Attachment:</strong> <a href="https://drive.google.com/file/d/16-t9kXC5fXGDfWdUkb8O6uoQD5JFPf47/view?usp=sharing" target="_blank">Download</a></p>
+                    <div class="meta-item"><i>🔑</i> <span class="tooltip">Flag Format<span class="tooltiptext">The flag must match this pattern exactly</span></span>: <code>AOHF{}</code></div>
+                </div>
+                
+                <div class="flag-form">
+                    <input type="text" class="flag-input" id="input-privilege_escalation_1" placeholder="Enter your flag here..." autocomplete="off">
+                    <button class="flag-submit" onclick="checkFlag_privilege_escalation_1()">
+                        <i>🔒</i> Submit Flag
+                    </button>
+                    <div class="result" id="result-privilege_escalation_1"></div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+        async function checkFlag_privilege_escalation_1() {
+            const input = document.getElementById("input-privilege_escalation_1").value.trim();
+            const resultElement = document.getElementById("result-privilege_escalation_1");
+            const challengeCard = document.getElementById("privilege_escalation_1");
+            
+            // Clear previous result and show loading state
+            resultElement.className = "result loading show";
+            resultElement.textContent = "🔐 Verifying your flag...";
+            
+            // Simulate network delay for realism
+            await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 700));
+            
+            try {
+                // Client-side SHA-256 hashing
+                const msgBuffer = new TextEncoder().encode(input);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+                if (hashHex === "0acbd92af3f4a5266181be1fecd1c0a20d4a052addee6fb2dab54c5fc7b590b3") {
+                    // Correct flag
+                    resultElement.className = "result success show";
+                    resultElement.textContent = "✅ Correct! Flag accepted!";
+                    
+                    // Celebration effects
+                    challengeCard.style.border = "1px solid var(--success)";
+                    challengeCard.style.boxShadow = "0 0 20px rgba(0, 204, 102, 0.5)";
+                    challengeCard.style.animation = "pulse 1.5s infinite";
+                    
+                    // Create confetti explosion
+                    createConfetti();
+                    
+                    // Add success badge to challenge
+                    const successBadge = document.createElement('div');
+                    successBadge.innerHTML = '<div style="position: absolute; top: 10px; right: 10px; background: var(--success); color: black; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: bold;">SOLVED</div>';
+                    challengeCard.appendChild(successBadge);
+                    
+                    // Disable input after success
+                    document.getElementById("input-privilege_escalation_1").disabled = true;
+                    document.querySelector(`button[onclick="checkFlag_privilege_escalation_1()"]`).disabled = true;
                     
                     // Stop pulse animation after 3 seconds
                     setTimeout(() => {
@@ -3698,6 +3790,98 @@
         }
         </script>
     <script>document.querySelector(`.category[id="cat-web"]`).style.display = "block";</script>
+
+        <div class="challenge" id="greeting" style="--accent-color: hsl(12, 80%, 60%)">
+            <div class="challenge-header" onclick="toggleChallengeDetails('greeting')">
+                <h3>Greeting</h3>
+                <div class="challenge-meta">
+                    <div class="meta-item"><i>⚡</i> <span class="difficulty-medium">Medium</span></div>
+                </div>
+                <i class="toggle-icon">▼</i>
+            </div>
+            
+            <div class="challenge-details" id="details-greeting">
+                <div class="challenge-description">
+                    <p><strong>Description:</strong> Give me your name. I wil greet you. Hello Sir<br><b>Note: Brute Force is strictly prohibited</b></p>
+                    <p><strong>Attachment:</strong> <a href="https://backend-flask-render.onrender.com/" target="_blank">Download</a></p>
+                    <div class="meta-item"><i>🔑</i> <span class="tooltip">Flag Format<span class="tooltiptext">The flag must match this pattern exactly</span></span>: <code>AOHF{}</code></div>
+                </div>
+                
+                <div class="flag-form">
+                    <input type="text" class="flag-input" id="input-greeting" placeholder="Enter your flag here..." autocomplete="off">
+                    <button class="flag-submit" onclick="checkFlag_greeting()">
+                        <i>🔒</i> Submit Flag
+                    </button>
+                    <div class="result" id="result-greeting"></div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+        async function checkFlag_greeting() {
+            const input = document.getElementById("input-greeting").value.trim();
+            const resultElement = document.getElementById("result-greeting");
+            const challengeCard = document.getElementById("greeting");
+            
+            // Clear previous result and show loading state
+            resultElement.className = "result loading show";
+            resultElement.textContent = "🔐 Verifying your flag...";
+            
+            // Simulate network delay for realism
+            await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 700));
+            
+            try {
+                // Client-side SHA-256 hashing
+                const msgBuffer = new TextEncoder().encode(input);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+                if (hashHex === "01ab0f53084fe8f9fb4e25b7c15ea05a7549e4ee7acc13826eb474319abc18ed") {
+                    // Correct flag
+                    resultElement.className = "result success show";
+                    resultElement.textContent = "✅ Correct! Flag accepted!";
+                    
+                    // Celebration effects
+                    challengeCard.style.border = "1px solid var(--success)";
+                    challengeCard.style.boxShadow = "0 0 20px rgba(0, 204, 102, 0.5)";
+                    challengeCard.style.animation = "pulse 1.5s infinite";
+                    
+                    // Create confetti explosion
+                    createConfetti();
+                    
+                    // Add success badge to challenge
+                    const successBadge = document.createElement('div');
+                    successBadge.innerHTML = '<div style="position: absolute; top: 10px; right: 10px; background: var(--success); color: black; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: bold;">SOLVED</div>';
+                    challengeCard.appendChild(successBadge);
+                    
+                    // Disable input after success
+                    document.getElementById("input-greeting").disabled = true;
+                    document.querySelector(`button[onclick="checkFlag_greeting()"]`).disabled = true;
+                    
+                    // Stop pulse animation after 3 seconds
+                    setTimeout(() => {
+                        challengeCard.style.animation = "";
+                    }, 3000);
+                } else {
+                    // Incorrect flag
+                    resultElement.className = "result error show";
+                    resultElement.textContent = "❌ Incorrect flag! Try again.";
+                    
+                    // Shake animation
+                    challengeCard.style.animation = "shake 0.5s";
+                    setTimeout(() => {
+                        challengeCard.style.animation = "";
+                    }, 500);
+                }
+            } catch (error) {
+                resultElement.className = "result error show";
+                resultElement.textContent = "⚠️ Error verifying flag. Please try again.";
+                console.error("Flag verification error:", error);
+            }
+        }
+        </script>
+    <script>document.querySelector(`.category[id="cat-web"]`).style.display = "block";</script>
                     <!-- web-challenges-here --> 
                 </div>
             </section>
@@ -4049,6 +4233,98 @@
                     // Disable input after success
                     document.getElementById("input-duty_calls").disabled = true;
                     document.querySelector(`button[onclick="checkFlag_duty_calls()"]`).disabled = true;
+                    
+                    // Stop pulse animation after 3 seconds
+                    setTimeout(() => {
+                        challengeCard.style.animation = "";
+                    }, 3000);
+                } else {
+                    // Incorrect flag
+                    resultElement.className = "result error show";
+                    resultElement.textContent = "❌ Incorrect flag! Try again.";
+                    
+                    // Shake animation
+                    challengeCard.style.animation = "shake 0.5s";
+                    setTimeout(() => {
+                        challengeCard.style.animation = "";
+                    }, 500);
+                }
+            } catch (error) {
+                resultElement.className = "result error show";
+                resultElement.textContent = "⚠️ Error verifying flag. Please try again.";
+                console.error("Flag verification error:", error);
+            }
+        }
+        </script>
+    <script>document.querySelector(`.category[id="cat-osint"]`).style.display = "block";</script>
+
+        <div class="challenge" id="wordplay" style="--accent-color: hsl(297, 80%, 60%)">
+            <div class="challenge-header" onclick="toggleChallengeDetails('wordplay')">
+                <h3>Wordplay</h3>
+                <div class="challenge-meta">
+                    <div class="meta-item"><i>⚡</i> <span class="difficulty-easy">easy</span></div>
+                </div>
+                <i class="toggle-icon">▼</i>
+            </div>
+            
+            <div class="challenge-details" id="details-wordplay">
+                <div class="challenge-description">
+                    <p><strong>Description:</strong> Shadowed by a giant high and grand,<br>Clues lie hidden across the land.<br>Hear the whispers, follow the trail,<br>Open your mind, don’t let it fail.<br>On this path, young minds unite,<br>Learn the secret, find the light.<br><b>Note: The flag is not the location shown in the image but somewhere nearby. The riddle is important.</b><br></p>
+                    <p><strong>Attachment:</strong> <a href="https://drive.google.com/file/d/12_2UTJ-x4BW5doau0ZCB0j-2Kua8apK8/view?usp=sharing" target="_blank">Download</a></p>
+                    <div class="meta-item"><i>🔑</i> <span class="tooltip">Flag Format<span class="tooltiptext">The flag must match this pattern exactly</span></span>: <code>OSINT{}</code></div>
+                </div>
+                
+                <div class="flag-form">
+                    <input type="text" class="flag-input" id="input-wordplay" placeholder="Enter your flag here..." autocomplete="off">
+                    <button class="flag-submit" onclick="checkFlag_wordplay()">
+                        <i>🔒</i> Submit Flag
+                    </button>
+                    <div class="result" id="result-wordplay"></div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+        async function checkFlag_wordplay() {
+            const input = document.getElementById("input-wordplay").value.trim();
+            const resultElement = document.getElementById("result-wordplay");
+            const challengeCard = document.getElementById("wordplay");
+            
+            // Clear previous result and show loading state
+            resultElement.className = "result loading show";
+            resultElement.textContent = "🔐 Verifying your flag...";
+            
+            // Simulate network delay for realism
+            await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 700));
+            
+            try {
+                // Client-side SHA-256 hashing
+                const msgBuffer = new TextEncoder().encode(input);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+                if (hashHex === "617fb176a34170bc646f41925e57267d99f000e925e76e646653c8628748ceed") {
+                    // Correct flag
+                    resultElement.className = "result success show";
+                    resultElement.textContent = "✅ Correct! Flag accepted!";
+                    
+                    // Celebration effects
+                    challengeCard.style.border = "1px solid var(--success)";
+                    challengeCard.style.boxShadow = "0 0 20px rgba(0, 204, 102, 0.5)";
+                    challengeCard.style.animation = "pulse 1.5s infinite";
+                    
+                    // Create confetti explosion
+                    createConfetti();
+                    
+                    // Add success badge to challenge
+                    const successBadge = document.createElement('div');
+                    successBadge.innerHTML = '<div style="position: absolute; top: 10px; right: 10px; background: var(--success); color: black; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: bold;">SOLVED</div>';
+                    challengeCard.appendChild(successBadge);
+                    
+                    // Disable input after success
+                    document.getElementById("input-wordplay").disabled = true;
+                    document.querySelector(`button[onclick="checkFlag_wordplay()"]`).disabled = true;
                     
                     // Stop pulse animation after 3 seconds
                     setTimeout(() => {
