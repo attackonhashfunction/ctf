@@ -264,92 +264,72 @@
   <tbody>
     <tr>
       <td>🥇 1</td>
-      <td>DargoTamber</td>
-      <td>11950</td>
+      <td>MrBender</td>
+      <td>5150</td>
     </tr>
     <tr>
       <td>🥈 2</td>
-      <td>suyashx_x</td>
-      <td>7800</td>
+      <td>sk1ll_1ssu3</td>
+      <td>3600</td>
     </tr>
     <tr>
       <td>🥉 3</td>
-      <td>sk1ll_1ssu3</td>
-      <td>6900</td>
+      <td>DargoTamber</td>
+      <td>3200</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>MrBender</td>
-      <td>6100</td>
+      <td>suyashx_x</td>
+      <td>2850</td>
     </tr>
     <tr>
       <td>5</td>
-      <td>Shrenav</td>
-      <td>3800</td>
+      <td>NikuHacks!</td>
+      <td>1700</td>
     </tr>
     <tr>
       <td>6</td>
-      <td>Oju D. Amatya</td>
-      <td>2800</td>
+      <td>MoonLight</td>
+      <td>1600</td>
     </tr>
     <tr>
       <td>7</td>
-      <td>༒𝙰sʜᴡɪɴ༒</td>
-      <td>2700</td>
+      <td>Oju D. Amatya</td>
+      <td>1250</td>
     </tr>
     <tr>
       <td>8</td>
-      <td>NikuHacks!</td>
-      <td>2300</td>
+      <td>༒𝙰sʜᴡɪɴ༒</td>
+      <td>1150</td>
     </tr>
     <tr>
       <td>9</td>
-      <td>YoursTruly</td>
-      <td>2100</td>
+      <td>Shrenav</td>
+      <td>1100</td>
     </tr>
     <tr>
       <td>10</td>
-      <td>MoonLight</td>
-      <td>1750</td>
+      <td>kinachaiyo</td>
+      <td>950</td>
     </tr>
     <tr>
       <td>11</td>
-      <td>kinachaiyo</td>
-      <td>1050</td>
+      <td>YoursTruly</td>
+      <td>900</td>
     </tr>
     <tr>
       <td>12</td>
-      <td>10y</td>
-      <td>650</td>
-    </tr>
-    <tr>
-      <td>13</td>
       <td>MauLana Rhoades</td>
       <td>600</td>
     </tr>
     <tr>
-      <td>14</td>
-      <td>404Ninjaaa</td>
-      <td>400</td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>krazy</td>
-      <td>350</td>
-    </tr>
-    <tr>
-      <td>16</td>
+      <td>13</td>
       <td>Abyss_Walker</td>
       <td>300</td>
     </tr>
     <tr>
-      <td>17</td>
-      <td>ahlai:3</td>
-      <td>150</td>
-    </tr>
-    <tr>
-      <td>17</td>
-      <td>Yodha</td>
+      <td>14</td>
+      <td>404Ninjaaa</td>
       <td>150</td>
     </tr>
   </tbody>
@@ -376,10 +356,10 @@
         const pointsChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['DargoTamber', 'suyashx_x', 'sk1ll_1ssu3', 'MrBender', 'Shrenav', 'Oju D. Amatya', '༒𝙰sʜᴡɪɴ༒', 'NikuHacks!', 'YoursTruly', 'MoonLight'],
+                labels: ['MrBender', 'sk1ll_1ssu3', 'DargoTamber', 'suyashx_x', 'NikuHacks!', 'MoonLight', 'Oju D. Amatya', '༒𝙰sʜᴡɪɴ༒', 'Shrenav', 'kinachaiyo'],
                 datasets: [{
                     label: 'Points',
-                    data: [11950, 7800, 6900, 6100, 3800, 2800, 2700, 2300, 2100, 1750],
+                    data: [5150, 3600, 3200, 2850, 1700, 1600, 1250, 1150, 1100, 950],
                     backgroundColor: gradient,
                     borderColor: 'rgba(255, 255, 255, 0.3)',
                     borderWidth: 1,
@@ -438,8 +418,8 @@
                 scales: {
                     y: {
                         beginAtZero: false,
-                        min: getRoundedMin([11950, 7800, 6900, 6100, 3800, 2800, 2700, 2300, 2100, 1750]),
-                        max: getRoundedMax([11950, 7800, 6900, 6100, 3800, 2800, 2700, 2300, 2100, 1750]),
+                        min: getRoundedMin([5150, 3600, 3200, 2850, 1700, 1600, 1250, 1150, 1100, 950]),
+                        max: getRoundedMax([5150, 3600, 3200, 2850, 1700, 1600, 1250, 1150, 1100, 950]),
                         ticks: {
                             color: 'rgba(255, 255, 255, 0.7)',
                             font: {
@@ -447,7 +427,7 @@
                                 size: 12
                             },
                             padding: 10,
-                            stepSize: getStepSize([11950, 7800, 6900, 6100, 3800, 2800, 2700, 2300, 2100, 1750]),
+                            stepSize: getStepSize([5150, 3600, 3200, 2850, 1700, 1600, 1250, 1150, 1100, 950]),
                             callback: function(value) {
                                 return value.toLocaleString();
                             }
