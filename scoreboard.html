@@ -598,52 +598,52 @@
     <tr>
       <td>🥇</td>
       <td>DargoTamber</td>
-      <td>11950</td>
+      <td>11900</td>
     </tr>
     <tr>
       <td>🥈</td>
       <td>suyashx_x</td>
-      <td>7800</td>
+      <td>8150</td>
     </tr>
     <tr>
       <td>🥉</td>
       <td>sk1ll_1ssu3</td>
-      <td>6800</td>
+      <td>6750</td>
     </tr>
     <tr>
       <td>4</td>
       <td>MrBender</td>
-      <td>6400</td>
+      <td>6350</td>
     </tr>
     <tr>
       <td>5</td>
       <td>Shrenav</td>
-      <td>3700</td>
+      <td>3650</td>
     </tr>
     <tr>
       <td>6</td>
       <td>Oju D. Amatya</td>
-      <td>3100</td>
+      <td>3400</td>
     </tr>
     <tr>
       <td>7</td>
       <td>༒𝙰sʜᴡɪɴ༒</td>
-      <td>2600</td>
+      <td>2550</td>
     </tr>
     <tr>
       <td>8</td>
+      <td>YoursTruly</td>
+      <td>2400</td>
+    </tr>
+    <tr>
+      <td>9</td>
       <td>NikuHacks!</td>
       <td>2300</td>
     </tr>
     <tr>
-      <td>9</td>
+      <td>10</td>
       <td>MoonLight</td>
       <td>2250</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>YoursTruly</td>
-      <td>2100</td>
     </tr>
     <tr>
       <td>11</td>
@@ -658,30 +658,35 @@
     <tr>
       <td>13</td>
       <td>MauLana Rhoades</td>
-      <td>600</td>
+      <td>550</td>
     </tr>
     <tr>
       <td>14</td>
+      <td>Nargiza Maharjan</td>
+      <td>450</td>
+    </tr>
+    <tr>
+      <td>15</td>
       <td>404Ninjaaa</td>
       <td>400</td>
     </tr>
     <tr>
-      <td>15</td>
+      <td>16</td>
       <td>krazy</td>
       <td>350</td>
     </tr>
     <tr>
-      <td>16</td>
+      <td>17</td>
       <td>Abyss_Walker</td>
       <td>300</td>
     </tr>
     <tr>
-      <td>17</td>
+      <td>18</td>
       <td>ahlai:3</td>
       <td>150</td>
     </tr>
     <tr>
-      <td>17</td>
+      <td>18</td>
       <td>Yodha</td>
       <td>150</td>
     </tr>
@@ -726,10 +731,10 @@
         const pointsChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['DargoTamber', 'suyashx_x', 'sk1ll_1ssu3', 'MrBender', 'Shrenav', 'Oju D. Amatya', '༒𝙰sʜᴡɪɴ༒', 'NikuHacks!', 'MoonLight', 'YoursTruly'],
+                labels: ['DargoTamber', 'suyashx_x', 'sk1ll_1ssu3', 'MrBender', 'Shrenav', 'Oju D. Amatya', '༒𝙰sʜᴡɪɴ༒', 'YoursTruly', 'NikuHacks!', 'MoonLight'],
                 datasets: [{
                     label: 'Points',
-                    data: [11950, 7800, 6800, 6400, 3700, 3100, 2600, 2300, 2250, 2100],
+                    data: [11900, 8150, 6750, 6350, 3650, 3400, 2550, 2400, 2300, 2250],
                     backgroundColor: gradient,
                     borderColor: 'rgba(255, 255, 255, 0.3)',
                     borderWidth: 1,
@@ -788,8 +793,8 @@
                 scales: {
                     y: {
                         beginAtZero: false,
-                        min: getRoundedMin([11950, 7800, 6800, 6400, 3700, 3100, 2600, 2300, 2250, 2100]),
-                        max: getRoundedMax([11950, 7800, 6800, 6400, 3700, 3100, 2600, 2300, 2250, 2100]),
+                        min: getRoundedMin([11900, 8150, 6750, 6350, 3650, 3400, 2550, 2400, 2300, 2250]),
+                        max: getRoundedMax([11900, 8150, 6750, 6350, 3650, 3400, 2550, 2400, 2300, 2250]),
                         ticks: {
                             color: 'rgba(255, 255, 255, 0.7)',
                             font: {
@@ -797,7 +802,7 @@
                                 size: 12
                             },
                             padding: 10,
-                            stepSize: getStepSize([11950, 7800, 6800, 6400, 3700, 3100, 2600, 2300, 2250, 2100]),
+                            stepSize: getStepSize([11900, 8150, 6750, 6350, 3650, 3400, 2550, 2400, 2300, 2250]),
                             callback: function(value) {
                                 return value.toLocaleString();
                             }
